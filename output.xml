@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-17T17:46:04.933896" rpa="false" schemaversion="5">
+<suite id="s1" name="TC1" source="C:\Users\Admin\PycharmProjects\RobotFramework_Python\TestCases\TC1.robot">
+<test id="s1-t1" name="Yahoo Finance Crypto Data Extraction" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-17T17:46:05.473795" level="INFO">Opening browser 'chrome' to base url 'https://finance.yahoo.com/'.</msg>
+<arg>https://finance.yahoo.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-17T17:46:05.473496" elapsed="71.397413"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-17T17:47:16.877351" elapsed="0.278927"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-05-17T17:47:17.160284" level="INFO">Simulating Mouse Over on element 'xpath=//span[text()='Markets']'.</msg>
+<arg>xpath=//span[text()='Markets']</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-05-17T17:47:17.157037" elapsed="0.776940"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-17T17:47:17.935124" level="INFO">Clicking element 'xpath=//div[normalize-space(text()) = 'Crypto']/parent::a[@href='https://finance.yahoo.com/markets/crypto/all/']'.</msg>
+<arg>xpath=//div[normalize-space(text()) = 'Crypto']/parent::a[@href='https://finance.yahoo.com/markets/crypto/all/']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-17T17:47:17.934689" elapsed="2.798895"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-17T17:47:22.736703" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-17T17:47:20.734262" elapsed="2.002639"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-17T17:47:23.326490" level="INFO">${CELL_TEXT} = BTC-USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-17T17:47:22.740426" elapsed="0.586158"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${CELL_TEXT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.327104" elapsed="0.000463"/>
+</kw>
+<var name="${ROW_INDEX}">0</var>
+<status status="PASS" start="2025-05-17T17:47:22.740053" elapsed="0.587641"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-17T17:47:23.432904" level="INFO">${CELL_TEXT} = ETH-USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.328053" elapsed="0.105049"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${CELL_TEXT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.433346" elapsed="0.000401"/>
+</kw>
+<var name="${ROW_INDEX}">1</var>
+<status status="PASS" start="2025-05-17T17:47:23.327912" elapsed="0.105947"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-17T17:47:23.544322" level="INFO">${CELL_TEXT} = USDT-USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.434193" elapsed="0.110181"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${CELL_TEXT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.544649" elapsed="0.000312"/>
+</kw>
+<var name="${ROW_INDEX}">2</var>
+<status status="PASS" start="2025-05-17T17:47:23.434041" elapsed="0.110998"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-17T17:47:23.661397" level="INFO">${CELL_TEXT} = XRP-USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.545403" elapsed="0.116066"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${CELL_TEXT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.661711" elapsed="0.000467"/>
+</kw>
+<var name="${ROW_INDEX}">3</var>
+<status status="PASS" start="2025-05-17T17:47:23.545286" elapsed="0.117030"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-17T17:47:23.849852" level="INFO">${CELL_TEXT} = BNB-USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.662679" elapsed="0.187241"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${CELL_TEXT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.850143" elapsed="0.000361"/>
+</kw>
+<var name="${ROW_INDEX}">4</var>
+<status status="PASS" start="2025-05-17T17:47:23.662520" elapsed="0.188066"/>
+</iter>
+<var>${ROW_INDEX}</var>
+<value>5</value>
+<status status="PASS" start="2025-05-17T17:47:22.737724" elapsed="1.112934"/>
+</for>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-17T17:47:24.054940" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="my_screenshot.png"&gt;&lt;img src="my_screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>my_screenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-17T17:47:23.851097" elapsed="0.203988"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-17T17:47:24.055543" elapsed="2.606511"/>
+</kw>
+<status status="PASS" start="2025-05-17T17:46:05.471907" elapsed="81.191131"/>
+</test>
+<status status="PASS" start="2025-05-17T17:46:04.938005" elapsed="81.727259"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC1" id="s1" pass="1" fail="0" skip="0">TC1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
