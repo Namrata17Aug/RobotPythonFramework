@@ -1,134 +1,2003 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-17T22:07:55.728882" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.1 on win32)" generated="2025-05-19T18:44:23.922554" rpa="false" schemaversion="5">
 <suite id="s1" name="TC1" source="C:\Users\Admin\PycharmProjects\RobotFramework_Python\TestCases\TC1.robot">
 <test id="s1-t1" name="Yahoo Finance Crypto Data Extraction" line="5">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-17T22:07:56.134594" level="INFO">Opening browser 'chrome' to base url 'https://finance.yahoo.com/'.</msg>
+<msg time="2025-05-19T18:44:24.409997" level="INFO">Opening browser 'chrome' to base url 'https://finance.yahoo.com/'.</msg>
 <arg>https://finance.yahoo.com/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-17T22:07:56.133912" elapsed="77.262850"/>
+<status status="PASS" start="2025-05-19T18:44:24.409572" elapsed="3.852682"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-17T22:09:13.401292" elapsed="0.146328"/>
+<status status="PASS" start="2025-05-19T18:44:28.263140" elapsed="73.157221"/>
 </kw>
 <kw name="Mouse Over" owner="SeleniumLibrary">
-<msg time="2025-05-17T22:09:13.550762" level="INFO">Simulating Mouse Over on element 'xpath=//span[text()='Markets']'.</msg>
+<msg time="2025-05-19T18:45:41.421948" level="INFO">Simulating Mouse Over on element 'xpath=//span[text()='Markets']'.</msg>
 <arg>xpath=//span[text()='Markets']</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="PASS" start="2025-05-17T22:09:13.548010" elapsed="0.546994"/>
+<status status="PASS" start="2025-05-19T18:45:41.421202" elapsed="0.450969"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-17T22:09:14.095553" level="INFO">Clicking element 'xpath=//div[normalize-space(text()) = 'Crypto']/parent::a[@href='https://finance.yahoo.com/markets/crypto/all/']'.</msg>
+<msg time="2025-05-19T18:45:41.873218" level="INFO">Clicking element 'xpath=//div[normalize-space(text()) = 'Crypto']/parent::a[@href='https://finance.yahoo.com/markets/crypto/all/']'.</msg>
 <arg>xpath=//div[normalize-space(text()) = 'Crypto']/parent::a[@href='https://finance.yahoo.com/markets/crypto/all/']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T22:09:14.095315" elapsed="62.962157"/>
+<status status="PASS" start="2025-05-19T18:45:41.872714" elapsed="2.745950"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-17T22:10:19.059649" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-05-19T18:45:46.620328" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-17T22:10:17.058117" elapsed="2.001673"/>
+<status status="PASS" start="2025-05-19T18:45:44.619192" elapsed="2.001275"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:46.621206" level="INFO">Clicking element 'xpath=//span[text()='Top Gainers']/parent::a[@href='/markets/crypto/gainers/']'.</msg>
+<arg>xpath=//span[text()='Top Gainers']/parent::a[@href='/markets/crypto/gainers/']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:46.620898" elapsed="0.598087"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//table/tbody/tr</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-19T18:45:47.219320" elapsed="0.132360"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:47.353224" level="INFO">Executing JavaScript:
+window.scrollTo(0, 1500)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 1500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-19T18:45:47.351970" elapsed="0.123412"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:47.477594" level="INFO">${ROW_NUM} = 1</msg>
+<var>${ROW_NUM}</var>
+<arg>${INDEX} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:47.477175" elapsed="0.000475"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:47.635003" level="INFO">${COL_COUNT} = 13</msg>
+<var>${COL_COUNT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:47.477853" elapsed="0.157423"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-19T18:45:47.636295" level="INFO">${ROW_DATA} = </msg>
+<var>${ROW_DATA}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-19T18:45:47.635503" elapsed="0.000838"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:47.637048" level="INFO">${COL_NUM} = 1</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:47.636822" elapsed="0.000254"/>
+</kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-17T22:10:19.149042" level="INFO">${CELL_TEXT} = BTC-USD</msg>
+<msg time="2025-05-19T18:45:49.021975" level="INFO">${CELL_TEXT} = LIQUIDIUM-USD</msg>
 <var>${CELL_TEXT}</var>
-<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.061441" elapsed="0.087657"/>
+<status status="PASS" start="2025-05-19T18:45:47.637225" elapsed="1.384895"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.022918" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
 <arg>${CELL_TEXT}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.149352" elapsed="0.000379"/>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.022457" elapsed="0.000529"/>
 </kw>
-<var name="${ROW_INDEX}">0</var>
-<status status="PASS" start="2025-05-17T22:10:19.061256" elapsed="0.088538"/>
+<var name="${COL}">0</var>
+<status status="PASS" start="2025-05-19T18:45:47.636696" elapsed="1.386399"/>
 </iter>
 <iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.023869" level="INFO">${COL_NUM} = 2</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.023512" elapsed="0.000391"/>
+</kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-17T22:10:19.211571" level="INFO">${CELL_TEXT} = ETH-USD</msg>
+<msg time="2025-05-19T18:45:49.113077" level="INFO">${CELL_TEXT} = LIQUIDIUM•TOKEN USD</msg>
 <var>${CELL_TEXT}</var>
-<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.150049" elapsed="0.061644"/>
+<status status="PASS" start="2025-05-19T18:45:49.024074" elapsed="0.089097"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.113699" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
 <arg>${CELL_TEXT}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.211854" elapsed="0.000282"/>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.113384" elapsed="0.000354"/>
 </kw>
-<var name="${ROW_INDEX}">1</var>
-<status status="PASS" start="2025-05-17T22:10:19.149952" elapsed="0.062243"/>
+<var name="${COL}">1</var>
+<status status="PASS" start="2025-05-19T18:45:49.023309" elapsed="0.090494"/>
 </iter>
 <iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.114373" level="INFO">${COL_NUM} = 3</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.114070" elapsed="0.000334"/>
+</kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-17T22:10:19.293949" level="INFO">${CELL_TEXT} = USDT-USD</msg>
+<msg time="2025-05-19T18:45:49.172009" level="INFO">${CELL_TEXT} = </msg>
 <var>${CELL_TEXT}</var>
-<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.212405" elapsed="0.081636"/>
+<status status="PASS" start="2025-05-19T18:45:49.114551" elapsed="0.057521"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.172537" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
 <arg>${CELL_TEXT}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.294432" elapsed="0.000395"/>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.172255" elapsed="0.000318"/>
 </kw>
-<var name="${ROW_INDEX}">2</var>
-<status status="PASS" start="2025-05-17T22:10:19.212317" elapsed="0.082615"/>
+<var name="${COL}">2</var>
+<status status="PASS" start="2025-05-19T18:45:49.113950" elapsed="0.058682"/>
 </iter>
 <iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.173137" level="INFO">${COL_NUM} = 4</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.172882" elapsed="0.000286"/>
+</kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-17T22:10:19.372174" level="INFO">${CELL_TEXT} = XRP-USD</msg>
+<msg time="2025-05-19T18:45:49.265792" level="INFO">${CELL_TEXT} = 0.384796</msg>
 <var>${CELL_TEXT}</var>
-<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.295278" elapsed="0.076949"/>
+<status status="PASS" start="2025-05-19T18:45:49.173544" elapsed="0.092320"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.266314" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
 <arg>${CELL_TEXT}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.372383" elapsed="0.000316"/>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.266073" elapsed="0.000271"/>
 </kw>
-<var name="${ROW_INDEX}">3</var>
-<status status="PASS" start="2025-05-17T22:10:19.295144" elapsed="0.077718"/>
+<var name="${COL}">3</var>
+<status status="PASS" start="2025-05-19T18:45:49.172765" elapsed="0.093631"/>
 </iter>
 <iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.266856" level="INFO">${COL_NUM} = 5</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.266642" elapsed="0.000247"/>
+</kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-05-17T22:10:19.448187" level="INFO">${CELL_TEXT} = BNB-USD</msg>
+<msg time="2025-05-19T18:45:49.288494" level="INFO">${CELL_TEXT} = +0.384067</msg>
 <var>${CELL_TEXT}</var>
-<arg>xpath=(//table/tbody/tr)[${ROW_INDEX}+1]//td[1]/div/span/a/div/span</arg>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.373210" elapsed="0.075034"/>
+<status status="PASS" start="2025-05-19T18:45:49.267005" elapsed="0.021544"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.288964" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796 |+0.384067</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
 <arg>${CELL_TEXT}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.448422" elapsed="0.000300"/>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.288732" elapsed="0.000265"/>
 </kw>
-<var name="${ROW_INDEX}">4</var>
-<status status="PASS" start="2025-05-17T22:10:19.373074" elapsed="0.075765"/>
+<var name="${COL}">4</var>
+<status status="PASS" start="2025-05-19T18:45:49.266527" elapsed="0.022520"/>
 </iter>
-<var>${ROW_INDEX}</var>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.289470" level="INFO">${COL_NUM} = 6</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.289264" elapsed="0.000237"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.310885" level="INFO">${CELL_TEXT} = +52,631.23%</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.289596" elapsed="0.021343"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.311397" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796 |+0.384067 |+52,631.23%</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.311129" elapsed="0.000299"/>
+</kw>
+<var name="${COL}">5</var>
+<status status="PASS" start="2025-05-19T18:45:49.289172" elapsed="0.022330"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.311966" level="INFO">${COL_NUM} = 7</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.311732" elapsed="0.000268"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.331672" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.312167" elapsed="0.019592"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.332302" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796 |+0.384067 |+52,631.23% |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.332017" elapsed="0.000324"/>
+</kw>
+<var name="${COL}">6</var>
+<status status="PASS" start="2025-05-19T18:45:49.311638" elapsed="0.020760"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.332882" level="INFO">${COL_NUM} = 8</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.332639" elapsed="0.000271"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.353382" level="INFO">${CELL_TEXT} = 280,400</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.333016" elapsed="0.020423"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.353997" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796 |+0.384067 |+52,631.23% |0 |280,400</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.353623" elapsed="0.000423"/>
+</kw>
+<var name="${COL}">7</var>
+<status status="PASS" start="2025-05-19T18:45:49.332538" elapsed="0.021593"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.354716" level="INFO">${COL_NUM} = 9</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.354448" elapsed="0.000309"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.374851" level="INFO">${CELL_TEXT} = 280,400</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.354889" elapsed="0.020020"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.375361" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796 |+0.384067 |+52,631.23% |0 |280,400 |280,400</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.375107" elapsed="0.000290"/>
+</kw>
+<var name="${COL}">8</var>
+<status status="PASS" start="2025-05-19T18:45:49.354299" elapsed="0.021158"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.375904" level="INFO">${COL_NUM} = 10</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.375691" elapsed="0.000244"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.395484" level="INFO">${CELL_TEXT} = 280,400</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.376036" elapsed="0.019512"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.396028" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796 |+0.384067 |+52,631.23% |0 |280,400 |280,400 |280,400</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.395768" elapsed="0.000431"/>
+</kw>
+<var name="${COL}">9</var>
+<status status="PASS" start="2025-05-19T18:45:49.375592" elapsed="0.020695"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.396864" level="INFO">${COL_NUM} = 11</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.396592" elapsed="0.000314"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.440202" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.397047" elapsed="0.043219"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.440725" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796 |+0.384067 |+52,631.23% |0 |280,400 |280,400 |280,400 |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.440461" elapsed="0.000297"/>
+</kw>
+<var name="${COL}">10</var>
+<status status="PASS" start="2025-05-19T18:45:49.396462" elapsed="0.044348"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.441258" level="INFO">${COL_NUM} = 12</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.441036" elapsed="0.000262"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.462587" level="INFO">${CELL_TEXT} = -99.57%</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.441426" elapsed="0.021227"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.463079" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796 |+0.384067 |+52,631.23% |0 |280,400 |280,400 |280,400 |0 |-99.57%</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.462830" elapsed="0.000288"/>
+</kw>
+<var name="${COL}">11</var>
+<status status="PASS" start="2025-05-19T18:45:49.440936" elapsed="0.022241"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.463616" level="INFO">${COL_NUM} = 13</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.463390" elapsed="0.000256"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.485885" level="INFO">${CELL_TEXT} = </msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.463744" elapsed="0.022208"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.486605" level="INFO">${ROW_DATA} =  |LIQUIDIUM-USD |LIQUIDIUM•TOKEN USD | |0.384796 |+0.384067 |+52,631.23% |0 |280,400 |280,400 |280,400 |0 |-99.57% |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.486235" elapsed="0.000416"/>
+</kw>
+<var name="${COL}">12</var>
+<status status="PASS" start="2025-05-19T18:45:49.463295" elapsed="0.023446"/>
+</iter>
+<var>${COL}</var>
+<value>${COL_COUNT}</value>
+<status status="PASS" start="2025-05-19T18:45:47.636522" elapsed="1.850309"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${ROW_DATA}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.487039" elapsed="0.000868"/>
+</kw>
+<var name="${INDEX}">0</var>
+<status status="PASS" start="2025-05-19T18:45:47.476923" elapsed="2.011061"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.488636" level="INFO">${ROW_NUM} = 2</msg>
+<var>${ROW_NUM}</var>
+<arg>${INDEX} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.488333" elapsed="0.000344"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.501575" level="INFO">${COL_COUNT} = 13</msg>
+<var>${COL_COUNT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.488812" elapsed="0.012826"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.502342" level="INFO">${ROW_DATA} = </msg>
+<var>${ROW_DATA}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.501855" elapsed="0.000528"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.503117" level="INFO">${COL_NUM} = 1</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.502797" elapsed="0.000358"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.525536" level="INFO">${CELL_TEXT} = LIQ32888-USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.503290" elapsed="0.022301"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.526051" level="INFO">${ROW_DATA} =  |LIQ32888-USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.525771" elapsed="0.000314"/>
+</kw>
+<var name="${COL}">0</var>
+<status status="PASS" start="2025-05-19T18:45:49.502624" elapsed="0.023517"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.526598" level="INFO">${COL_NUM} = 2</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.526365" elapsed="0.000262"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.547606" level="INFO">${CELL_TEXT} = LIQUIDIUM•TOKEN USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.526730" elapsed="0.020955"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.548146" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.547898" elapsed="0.000276"/>
+</kw>
+<var name="${COL}">1</var>
+<status status="PASS" start="2025-05-19T18:45:49.526280" elapsed="0.021957"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.548821" level="INFO">${COL_NUM} = 3</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.548561" elapsed="0.000290"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.569487" level="INFO">${CELL_TEXT} = </msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.548954" elapsed="0.020588"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.570039" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.569721" elapsed="0.000366"/>
+</kw>
+<var name="${COL}">2</var>
+<status status="PASS" start="2025-05-19T18:45:49.548453" elapsed="0.021713"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.570698" level="INFO">${COL_NUM} = 4</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.570461" elapsed="0.000274"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.592046" level="INFO">${CELL_TEXT} = 0.366218</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.570830" elapsed="0.021280"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.592513" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.592291" elapsed="0.000258"/>
+</kw>
+<var name="${COL}">3</var>
+<status status="PASS" start="2025-05-19T18:45:49.570343" elapsed="0.022258"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.593050" level="INFO">${COL_NUM} = 5</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.592819" elapsed="0.000269"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.613495" level="INFO">${CELL_TEXT} = +0.365488</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.593192" elapsed="0.020356"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.613984" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218 |+0.365488</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.613733" elapsed="0.000285"/>
+</kw>
+<var name="${COL}">4</var>
+<status status="PASS" start="2025-05-19T18:45:49.592736" elapsed="0.021332"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.614453" level="INFO">${COL_NUM} = 6</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.614268" elapsed="0.000212"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.635057" level="INFO">${CELL_TEXT} = +50,064.35%</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.614573" elapsed="0.020534"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.635474" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218 |+0.365488 |+50,064.35%</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.635271" elapsed="0.000234"/>
+</kw>
+<var name="${COL}">5</var>
+<status status="PASS" start="2025-05-19T18:45:49.614180" elapsed="0.021375"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.635933" level="INFO">${COL_NUM} = 7</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.635752" elapsed="0.000207"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.656444" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.636050" elapsed="0.020441"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.656851" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218 |+0.365488 |+50,064.35% |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.656645" elapsed="0.000238"/>
+</kw>
+<var name="${COL}">6</var>
+<status status="PASS" start="2025-05-19T18:45:49.635673" elapsed="0.021258"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.657321" level="INFO">${COL_NUM} = 8</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.657138" elapsed="0.000209"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.677965" level="INFO">${CELL_TEXT} = 247,625</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.657436" elapsed="0.020585"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.678459" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218 |+0.365488 |+50,064.35% |0 |247,625</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.678198" elapsed="0.000299"/>
+</kw>
+<var name="${COL}">7</var>
+<status status="PASS" start="2025-05-19T18:45:49.657053" elapsed="0.021511"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.679132" level="INFO">${COL_NUM} = 9</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.678834" elapsed="0.000341"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.698438" level="INFO">${CELL_TEXT} = 247,625</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.679287" elapsed="0.019224"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.699132" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218 |+0.365488 |+50,064.35% |0 |247,625 |247,625</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.698858" elapsed="0.000310"/>
+</kw>
+<var name="${COL}">8</var>
+<status status="PASS" start="2025-05-19T18:45:49.678737" elapsed="0.020485"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.699666" level="INFO">${COL_NUM} = 10</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.699431" elapsed="0.000262"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.720259" level="INFO">${CELL_TEXT} = 247,625</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.699794" elapsed="0.020527"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.720729" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218 |+0.365488 |+50,064.35% |0 |247,625 |247,625 |247,625</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.720478" elapsed="0.000296"/>
+</kw>
+<var name="${COL}">9</var>
+<status status="PASS" start="2025-05-19T18:45:49.699334" elapsed="0.021491"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.721345" level="INFO">${COL_NUM} = 11</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.721100" elapsed="0.000272"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:49.741321" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.721469" elapsed="0.019899"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.741750" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218 |+0.365488 |+50,064.35% |0 |247,625 |247,625 |247,625 |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.741538" elapsed="0.000248"/>
+</kw>
+<var name="${COL}">10</var>
+<status status="PASS" start="2025-05-19T18:45:49.720974" elapsed="0.020882"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:49.742312" level="INFO">${COL_NUM} = 12</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.742080" elapsed="0.000289"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.052385" level="INFO">${CELL_TEXT} = -99.50%</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:49.742488" elapsed="0.309950"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.052829" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218 |+0.365488 |+50,064.35% |0 |247,625 |247,625 |247,625 |0 |-99.50%</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.052603" elapsed="0.000256"/>
+</kw>
+<var name="${COL}">11</var>
+<status status="PASS" start="2025-05-19T18:45:49.741991" elapsed="0.310932"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.053393" level="INFO">${COL_NUM} = 13</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.053154" elapsed="0.000267"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.075679" level="INFO">${CELL_TEXT} = </msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.053519" elapsed="0.022237"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.076283" level="INFO">${ROW_DATA} =  |LIQ32888-USD |LIQUIDIUM•TOKEN USD | |0.366218 |+0.365488 |+50,064.35% |0 |247,625 |247,625 |247,625 |0 |-99.50% |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.075988" elapsed="0.000329"/>
+</kw>
+<var name="${COL}">12</var>
+<status status="PASS" start="2025-05-19T18:45:50.053067" elapsed="0.023307"/>
+</iter>
+<var>${COL}</var>
+<value>${COL_COUNT}</value>
+<status status="PASS" start="2025-05-19T18:45:49.502464" elapsed="0.573973"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${ROW_DATA}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.076577" elapsed="0.000328"/>
+</kw>
+<var name="${INDEX}">1</var>
+<status status="PASS" start="2025-05-19T18:45:49.488211" elapsed="0.588751"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.077544" level="INFO">${ROW_NUM} = 3</msg>
+<var>${ROW_NUM}</var>
+<arg>${INDEX} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.077290" elapsed="0.000291"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.092966" level="INFO">${COL_COUNT} = 13</msg>
+<var>${COL_COUNT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.077703" elapsed="0.015318"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.093866" level="INFO">${ROW_DATA} = </msg>
+<var>${ROW_DATA}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.093207" elapsed="0.000705"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.094662" level="INFO">${COL_NUM} = 1</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.094405" elapsed="0.000297"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.118195" level="INFO">${CELL_TEXT} = SNL35953-USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.094856" elapsed="0.023400"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.118934" level="INFO">${ROW_DATA} =  |SNL35953-USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.118639" elapsed="0.000331"/>
+</kw>
+<var name="${COL}">0</var>
+<status status="PASS" start="2025-05-19T18:45:50.094272" elapsed="0.024802"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.119669" level="INFO">${COL_NUM} = 2</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.119349" elapsed="0.000362"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.145046" level="INFO">${CELL_TEXT} = Snow Leopard USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.119917" elapsed="0.025188"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.145780" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.145395" elapsed="0.000434"/>
+</kw>
+<var name="${COL}">1</var>
+<status status="PASS" start="2025-05-19T18:45:50.119237" elapsed="0.026685"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.146638" level="INFO">${COL_NUM} = 3</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.146309" elapsed="0.000392"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.173905" level="INFO">${CELL_TEXT} = </msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.146888" elapsed="0.027099"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.174656" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.174268" elapsed="0.000438"/>
+</kw>
+<var name="${COL}">2</var>
+<status status="PASS" start="2025-05-19T18:45:50.146122" elapsed="0.028688"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.175422" level="INFO">${COL_NUM} = 4</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.175142" elapsed="0.000330"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.201204" level="INFO">${CELL_TEXT} = 0.00000120</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.175661" elapsed="0.025611"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.201752" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.201502" elapsed="0.000286"/>
+</kw>
+<var name="${COL}">3</var>
+<status status="PASS" start="2025-05-19T18:45:50.175006" elapsed="0.026856"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.202397" level="INFO">${COL_NUM} = 5</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.202107" elapsed="0.000327"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.227759" level="INFO">${CELL_TEXT} = +0.00000117</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.202565" elapsed="0.025271"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.228416" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120 |+0.00000117</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.228116" elapsed="0.000347"/>
+</kw>
+<var name="${COL}">4</var>
+<status status="PASS" start="2025-05-19T18:45:50.202008" elapsed="0.026540"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.229137" level="INFO">${COL_NUM} = 6</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.228844" elapsed="0.000335"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.275792" level="INFO">${CELL_TEXT} = +4,294.72%</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.229388" elapsed="0.046456"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.276221" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120 |+0.00000117 |+4,294.72%</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.276015" elapsed="0.000233"/>
+</kw>
+<var name="${COL}">5</var>
+<status status="PASS" start="2025-05-19T18:45:50.228706" elapsed="0.047601"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.276877" level="INFO">${COL_NUM} = 7</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.276591" elapsed="0.000321"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.302349" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.277099" elapsed="0.025320"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.303166" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120 |+0.00000117 |+4,294.72% |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.302650" elapsed="0.000546"/>
+</kw>
+<var name="${COL}">6</var>
+<status status="PASS" start="2025-05-19T18:45:50.276464" elapsed="0.026807"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.303850" level="INFO">${COL_NUM} = 8</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.303575" elapsed="0.000313"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.325515" level="INFO">${CELL_TEXT} = 902,992</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.304140" elapsed="0.021423"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.326074" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120 |+0.00000117 |+4,294.72% |0 |902,992</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.325784" elapsed="0.000319"/>
+</kw>
+<var name="${COL}">7</var>
+<status status="PASS" start="2025-05-19T18:45:50.303429" elapsed="0.022725"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.326548" level="INFO">${COL_NUM} = 9</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.326354" elapsed="0.000221"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.351205" level="INFO">${CELL_TEXT} = 902,992</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.326687" elapsed="0.024604"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.351857" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120 |+0.00000117 |+4,294.72% |0 |902,992 |902,992</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.351530" elapsed="0.000372"/>
+</kw>
+<var name="${COL}">8</var>
+<status status="PASS" start="2025-05-19T18:45:50.326272" elapsed="0.025713"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.352606" level="INFO">${COL_NUM} = 10</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.352309" elapsed="0.000342"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.378292" level="INFO">${CELL_TEXT} = 902,992</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.352820" elapsed="0.025528"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.378704" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120 |+0.00000117 |+4,294.72% |0 |902,992 |902,992 |902,992</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.378504" elapsed="0.000226"/>
+</kw>
+<var name="${COL}">9</var>
+<status status="PASS" start="2025-05-19T18:45:50.352173" elapsed="0.026609"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.379515" level="INFO">${COL_NUM} = 11</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.378978" elapsed="0.000564"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.400485" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.379649" elapsed="0.020883"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.400954" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120 |+0.00000117 |+4,294.72% |0 |902,992 |902,992 |902,992 |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.400700" elapsed="0.000337"/>
+</kw>
+<var name="${COL}">10</var>
+<status status="PASS" start="2025-05-19T18:45:50.378897" elapsed="0.022219"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.401814" level="INFO">${COL_NUM} = 12</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.401398" elapsed="0.000466"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.426143" level="INFO">${CELL_TEXT} = --</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.402024" elapsed="0.024182"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.426758" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120 |+0.00000117 |+4,294.72% |0 |902,992 |902,992 |902,992 |0 |--</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.426415" elapsed="0.000393"/>
+</kw>
+<var name="${COL}">11</var>
+<status status="PASS" start="2025-05-19T18:45:50.401283" elapsed="0.025610"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.427475" level="INFO">${COL_NUM} = 13</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.427188" elapsed="0.000330"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.446907" level="INFO">${CELL_TEXT} = </msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.427649" elapsed="0.019306"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.447309" level="INFO">${ROW_DATA} =  |SNL35953-USD |Snow Leopard USD | |0.00000120 |+0.00000117 |+4,294.72% |0 |902,992 |902,992 |902,992 |0 |-- |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.447111" elapsed="0.000230"/>
+</kw>
+<var name="${COL}">12</var>
+<status status="PASS" start="2025-05-19T18:45:50.427067" elapsed="0.020343"/>
+</iter>
+<var>${COL}</var>
+<value>${COL_COUNT}</value>
+<status status="PASS" start="2025-05-19T18:45:50.094028" elapsed="0.353442"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${ROW_DATA}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.447583" elapsed="0.000277"/>
+</kw>
+<var name="${INDEX}">2</var>
+<status status="PASS" start="2025-05-19T18:45:50.077179" elapsed="0.370764"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.448542" level="INFO">${ROW_NUM} = 4</msg>
+<var>${ROW_NUM}</var>
+<arg>${INDEX} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.448301" elapsed="0.000338"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.460444" level="INFO">${COL_COUNT} = 13</msg>
+<var>${COL_COUNT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.448745" elapsed="0.011758"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.461210" level="INFO">${ROW_DATA} = </msg>
+<var>${ROW_DATA}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.460694" elapsed="0.000551"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.461846" level="INFO">${COL_NUM} = 1</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.461604" elapsed="0.000275"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.488172" level="INFO">${CELL_TEXT} = CATX31291-USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.461997" elapsed="0.026249"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.488776" level="INFO">${ROW_DATA} =  |CATX31291-USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.488492" elapsed="0.000320"/>
+</kw>
+<var name="${COL}">0</var>
+<status status="PASS" start="2025-05-19T18:45:50.461502" elapsed="0.027376"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.489389" level="INFO">${COL_NUM} = 2</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.489151" elapsed="0.000266"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.512246" level="INFO">${CELL_TEXT} = CATX USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.489531" elapsed="0.022780"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.512842" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.512507" elapsed="0.000378"/>
+</kw>
+<var name="${COL}">1</var>
+<status status="PASS" start="2025-05-19T18:45:50.489047" elapsed="0.023915"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.513495" level="INFO">${COL_NUM} = 3</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.513269" elapsed="0.000254"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.534382" level="INFO">${CELL_TEXT} = </msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.513627" elapsed="0.020808"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.534834" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.534610" elapsed="0.000251"/>
+</kw>
+<var name="${COL}">2</var>
+<status status="PASS" start="2025-05-19T18:45:50.513141" elapsed="0.021774"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.535304" level="INFO">${COL_NUM} = 4</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.535116" elapsed="0.000214"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.558450" level="INFO">${CELL_TEXT} = 0.00000278</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.535475" elapsed="0.023033"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.558940" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.558692" elapsed="0.000281"/>
+</kw>
+<var name="${COL}">3</var>
+<status status="PASS" start="2025-05-19T18:45:50.535036" elapsed="0.023996"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.559503" level="INFO">${COL_NUM} = 5</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.559268" elapsed="0.000268"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.579235" level="INFO">${CELL_TEXT} = +0.00000242</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.559667" elapsed="0.019616"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.579640" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278 |+0.00000242</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.579439" elapsed="0.000227"/>
+</kw>
+<var name="${COL}">4</var>
+<status status="PASS" start="2025-05-19T18:45:50.559172" elapsed="0.020554"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.580186" level="INFO">${COL_NUM} = 6</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.579973" elapsed="0.000242"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.599846" level="INFO">${CELL_TEXT} = +661.52%</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.580317" elapsed="0.019576"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.600253" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278 |+0.00000242 |+661.52%</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.600049" elapsed="0.000231"/>
+</kw>
+<var name="${COL}">5</var>
+<status status="PASS" start="2025-05-19T18:45:50.579858" elapsed="0.020548"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.600816" level="INFO">${COL_NUM} = 7</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.600623" elapsed="0.000220"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.622362" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.600940" elapsed="0.021471"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.622779" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278 |+0.00000242 |+661.52% |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.622569" elapsed="0.000242"/>
+</kw>
+<var name="${COL}">6</var>
+<status status="PASS" start="2025-05-19T18:45:50.600542" elapsed="0.022321"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.623287" level="INFO">${COL_NUM} = 8</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.623075" elapsed="0.000239"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.644200" level="INFO">${CELL_TEXT} = 71,185</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.623419" elapsed="0.020834"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.644729" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278 |+0.00000242 |+661.52% |0 |71,185</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.644425" elapsed="0.000351"/>
+</kw>
+<var name="${COL}">7</var>
+<status status="PASS" start="2025-05-19T18:45:50.622982" elapsed="0.021875"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.645614" level="INFO">${COL_NUM} = 9</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.645242" elapsed="0.000429"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.666538" level="INFO">${CELL_TEXT} = 71,185</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.645888" elapsed="0.020708"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.667038" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278 |+0.00000242 |+661.52% |0 |71,185 |71,185</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.666787" elapsed="0.000278"/>
+</kw>
+<var name="${COL}">8</var>
+<status status="PASS" start="2025-05-19T18:45:50.645061" elapsed="0.022055"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.667503" level="INFO">${COL_NUM} = 10</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.667308" elapsed="0.000223"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.686712" level="INFO">${CELL_TEXT} = 71,185</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.667654" elapsed="0.019113"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.687167" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278 |+0.00000242 |+661.52% |0 |71,185 |71,185 |71,185</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.686944" elapsed="0.000251"/>
+</kw>
+<var name="${COL}">9</var>
+<status status="PASS" start="2025-05-19T18:45:50.667227" elapsed="0.020030"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.687695" level="INFO">${COL_NUM} = 11</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.687493" elapsed="0.000231"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.706485" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.687834" elapsed="0.018700"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.706899" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278 |+0.00000242 |+661.52% |0 |71,185 |71,185 |71,185 |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.706702" elapsed="0.000224"/>
+</kw>
+<var name="${COL}">10</var>
+<status status="PASS" start="2025-05-19T18:45:50.687377" elapsed="0.019599"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.707528" level="INFO">${COL_NUM} = 12</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.707197" elapsed="0.000363"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.728487" level="INFO">${CELL_TEXT} = +200.00%</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.707679" elapsed="0.020866"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.728936" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278 |+0.00000242 |+661.52% |0 |71,185 |71,185 |71,185 |0 |+200.00%</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.728731" elapsed="0.000232"/>
+</kw>
+<var name="${COL}">11</var>
+<status status="PASS" start="2025-05-19T18:45:50.707116" elapsed="0.021895"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.729409" level="INFO">${COL_NUM} = 13</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.729217" elapsed="0.000221"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.752464" level="INFO">${CELL_TEXT} = </msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.729534" elapsed="0.023000"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.753061" level="INFO">${ROW_DATA} =  |CATX31291-USD |CATX USD | |0.00000278 |+0.00000242 |+661.52% |0 |71,185 |71,185 |71,185 |0 |+200.00% |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.752761" elapsed="0.000341"/>
+</kw>
+<var name="${COL}">12</var>
+<status status="PASS" start="2025-05-19T18:45:50.729130" elapsed="0.024050"/>
+</iter>
+<var>${COL}</var>
+<value>${COL_COUNT}</value>
+<status status="PASS" start="2025-05-19T18:45:50.461329" elapsed="0.291923"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${ROW_DATA}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.753404" elapsed="0.000325"/>
+</kw>
+<var name="${INDEX}">3</var>
+<status status="PASS" start="2025-05-19T18:45:50.448195" elapsed="0.305610"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.754401" level="INFO">${ROW_NUM} = 5</msg>
+<var>${ROW_NUM}</var>
+<arg>${INDEX} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.754132" elapsed="0.000307"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.769203" level="INFO">${COL_COUNT} = 13</msg>
+<var>${COL_COUNT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.754578" elapsed="0.014675"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.769945" level="INFO">${ROW_DATA} = </msg>
+<var>${ROW_DATA}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.769409" elapsed="0.000584"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.770497" level="INFO">${COL_NUM} = 1</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.770308" elapsed="0.000217"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.794689" level="INFO">${CELL_TEXT} = TURBO33724-USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.770637" elapsed="0.024113"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.795141" level="INFO">${ROW_DATA} =  |TURBO33724-USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.794924" elapsed="0.000244"/>
+</kw>
+<var name="${COL}">0</var>
+<status status="PASS" start="2025-05-19T18:45:50.770220" elapsed="0.025020"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.795628" level="INFO">${COL_NUM} = 2</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.795434" elapsed="0.000221"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.817420" level="INFO">${CELL_TEXT} = Turbo Trump USD</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.795750" elapsed="0.021720"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.817818" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.817622" elapsed="0.000231"/>
+</kw>
+<var name="${COL}">1</var>
+<status status="PASS" start="2025-05-19T18:45:50.795355" elapsed="0.022547"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.818371" level="INFO">${COL_NUM} = 3</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.818097" elapsed="0.000318"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.839918" level="INFO">${CELL_TEXT} = </msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.818584" elapsed="0.021384"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.840348" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.840136" elapsed="0.000239"/>
+</kw>
+<var name="${COL}">2</var>
+<status status="PASS" start="2025-05-19T18:45:50.818020" elapsed="0.022404"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.840816" level="INFO">${COL_NUM} = 4</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.840616" elapsed="0.000227"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.862157" level="INFO">${CELL_TEXT} = 0.000825</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.840940" elapsed="0.021267"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.862572" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.862372" elapsed="0.000233"/>
+</kw>
+<var name="${COL}">3</var>
+<status status="PASS" start="2025-05-19T18:45:50.840538" elapsed="0.022115"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.863031" level="INFO">${COL_NUM} = 5</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.862843" elapsed="0.000215"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.883622" level="INFO">${CELL_TEXT} = +0.000653</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.863159" elapsed="0.020513"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.884038" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825 |+0.000653</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.883825" elapsed="0.000302"/>
+</kw>
+<var name="${COL}">4</var>
+<status status="PASS" start="2025-05-19T18:45:50.862768" elapsed="0.021421"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.884562" level="INFO">${COL_NUM} = 6</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.884385" elapsed="0.000204"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.907410" level="INFO">${CELL_TEXT} = +377.73%</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.884682" elapsed="0.022778"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.907961" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825 |+0.000653 |+377.73%</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.907657" elapsed="0.000336"/>
+</kw>
+<var name="${COL}">5</var>
+<status status="PASS" start="2025-05-19T18:45:50.884302" elapsed="0.023763"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.908636" level="INFO">${COL_NUM} = 7</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.908343" elapsed="0.000361"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.933793" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.908870" elapsed="0.024970"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.934196" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825 |+0.000653 |+377.73% |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.933998" elapsed="0.000244"/>
+</kw>
+<var name="${COL}">6</var>
+<status status="PASS" start="2025-05-19T18:45:50.908206" elapsed="0.026090"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.934760" level="INFO">${COL_NUM} = 8</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.934520" elapsed="0.000278"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.954683" level="INFO">${CELL_TEXT} = 1.29M</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.934918" elapsed="0.019819"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.955139" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825 |+0.000653 |+377.73% |0 |1.29M</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.954894" elapsed="0.000279"/>
+</kw>
+<var name="${COL}">7</var>
+<status status="PASS" start="2025-05-19T18:45:50.934421" elapsed="0.020817"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.955603" level="INFO">${COL_NUM} = 9</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.955422" elapsed="0.000207"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:50.976293" level="INFO">${CELL_TEXT} = 1.29M</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.955729" elapsed="0.020642"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.976836" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825 |+0.000653 |+377.73% |0 |1.29M |1.29M</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.976584" elapsed="0.000285"/>
+</kw>
+<var name="${COL}">8</var>
+<status status="PASS" start="2025-05-19T18:45:50.955348" elapsed="0.021596"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:50.977453" level="INFO">${COL_NUM} = 10</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.977204" elapsed="0.000281"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:51.005225" level="INFO">${CELL_TEXT} = 1.29M</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:50.977604" elapsed="0.027692"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:51.005831" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825 |+0.000653 |+377.73% |0 |1.29M |1.29M |1.29M</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.005520" elapsed="0.000355"/>
+</kw>
+<var name="${COL}">9</var>
+<status status="PASS" start="2025-05-19T18:45:50.977111" elapsed="0.028833"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:51.006461" level="INFO">${COL_NUM} = 11</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.006179" elapsed="0.000312"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:51.026512" level="INFO">${CELL_TEXT} = 0</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.006655" elapsed="0.019941"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:51.027118" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825 |+0.000653 |+377.73% |0 |1.29M |1.29M |1.29M |0</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.026832" elapsed="0.000335"/>
+</kw>
+<var name="${COL}">10</var>
+<status status="PASS" start="2025-05-19T18:45:51.006073" elapsed="0.021172"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:51.027856" level="INFO">${COL_NUM} = 12</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.027571" elapsed="0.000323"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:51.050807" level="INFO">${CELL_TEXT} = +39,300.00%</msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.028108" elapsed="0.022764"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:51.051380" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825 |+0.000653 |+377.73% |0 |1.29M |1.29M |1.29M |0 |+39,300.00%</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.051089" elapsed="0.000327"/>
+</kw>
+<var name="${COL}">11</var>
+<status status="PASS" start="2025-05-19T18:45:51.027388" elapsed="0.024094"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:51.051998" level="INFO">${COL_NUM} = 13</msg>
+<var>${COL_NUM}</var>
+<arg>${COL} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.051739" elapsed="0.000295"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-19T18:45:51.073230" level="INFO">${CELL_TEXT} = </msg>
+<var>${CELL_TEXT}</var>
+<arg>xpath=(//table/tbody/tr)[${ROW_NUM}]/td[${COL_NUM}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.052161" elapsed="0.021145"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-05-19T18:45:51.073908" level="INFO">${ROW_DATA} =  |TURBO33724-USD |Turbo Trump USD | |0.000825 |+0.000653 |+377.73% |0 |1.29M |1.29M |1.29M |0 |+39,300.00% |</msg>
+<var>${ROW_DATA}</var>
+<arg>SEPARATOR= |</arg>
+<arg>${ROW_DATA}</arg>
+<arg>${CELL_TEXT}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.073569" elapsed="0.000378"/>
+</kw>
+<var name="${COL}">12</var>
+<status status="PASS" start="2025-05-19T18:45:51.051634" elapsed="0.022413"/>
+</iter>
+<var>${COL}</var>
+<value>${COL_COUNT}</value>
+<status status="PASS" start="2025-05-19T18:45:50.770068" elapsed="0.304049"/>
+</for>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${ROW_DATA}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-19T18:45:51.074287" elapsed="0.000389"/>
+</kw>
+<var name="${INDEX}">4</var>
+<status status="PASS" start="2025-05-19T18:45:50.754022" elapsed="0.320746"/>
+</iter>
+<var>${INDEX}</var>
 <value>5</value>
-<status status="PASS" start="2025-05-17T22:10:19.060213" elapsed="0.388682"/>
+<status status="PASS" start="2025-05-19T18:45:47.476262" elapsed="3.598591"/>
 </for>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-05-17T22:10:19.621776" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="my_screenshot.png"&gt;&lt;img src="my_screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-19T18:45:51.325298" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="my_screenshot.png"&gt;&lt;img src="my_screenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>my_screenshot.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.449149" elapsed="0.172754"/>
+<status status="PASS" start="2025-05-19T18:45:51.075344" elapsed="0.250116"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-17T22:10:19.622221" elapsed="2.471609"/>
+<status status="PASS" start="2025-05-19T18:45:51.325832" elapsed="2.616920"/>
 </kw>
-<status status="PASS" start="2025-05-17T22:07:56.132789" elapsed="145.961486"/>
+<status status="PASS" start="2025-05-19T18:44:24.407322" elapsed="89.536080"/>
 </test>
-<status status="PASS" start="2025-05-17T22:07:55.732170" elapsed="146.363466"/>
+<status status="PASS" start="2025-05-19T18:44:23.925833" elapsed="90.018867"/>
 </suite>
 <statistics>
 <total>
